@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.2877813504823151" />
+        <entry key="app/src/main/res/drawable/down_shadow.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/ic_16_favorites_active.xml" value="0.278125" />
+        <entry key="app/src/main/res/drawable/ic_24_arrow_left.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/ic_24_favorites_inactive.xml" value="0.18854166666666666" />
+        <entry key="app/src/main/res/drawable/ic_24_search.xml" value="0.1640625" />
+        <entry key="app/src/main/res/drawable/ic_24_x.xml" value="0.13072916666666667" />
+        <entry key="app/src/main/res/drawable/ic__24_characters_active.xml" value="0.18854166666666666" />
+        <entry key="app/src/main/res/drawable/ic_broken_img.xml" value="0.2796875" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/loading_animation.xml" value="0.2796875" />
+        <entry key="app/src/main/res/drawable/loading_img.xml" value="0.2796875" />
+        <entry key="app/src/main/res/drawable/myrect.xml" value="0.278125" />
+        <entry key="app/src/main/res/drawable/round_outline.xml" value="0.1640625" />
+        <entry key="app/src/main/res/drawable/toolbar_dropshadow.xml" value="0.1875" />
+        <entry key="app/src/main/res/layout-v22/characters.xml" value="0.14791666666666667" />
+        <entry key="app/src/main/res/layout-v31/character.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2608695652173913" />
+        <entry key="app/src/main/res/layout/character.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/character_card.xml" value="0.16259057971014493" />
+        <entry key="app/src/main/res/layout/character_details.xml" value="0.26313405797101447" />
+        <entry key="app/src/main/res/layout/characters.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/empty_favorites.xml" value="0.1274062816616008" />
+        <entry key="app/src/main/res/layout/favorites.xml" value="0.2608695652173913" />
+        <entry key="app/src/main/res/layout/filtered_character.xml" value="0.2635416666666667" />
+        <entry key="app/src/main/res/layout/fragment_character_details.xml" value="0.1503623188405797" />
+        <entry key="app/src/main/res/menu/bottom_navigation_items.xml" value="0.2635416666666667" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.11770833333333333" />
+        <entry key="app/src/main/res/menu/character_details_menu.xml" value="0.17239583333333333" />
+        <entry key="app/src/main/res/menu/characters_menu.xml" value="0.2635416666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="app/src/main/res/xml/searchable.xml" value="0.1503623188405797" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

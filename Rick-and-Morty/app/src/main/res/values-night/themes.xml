@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AndroidTestTask" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/backgroundsPrimary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/backgroundsPrimary</item>
+        <item name="searchViewStyle">@style/CustomSearchViewStyle</item>
+    </style>
+
+    <style name="CharacterCard">
+        <item name="cardBackgroundColor">@color/backgroundsSecondary</item>
+    </style>
+
+    <style name="FilteredCharacterCard">
+        <item name="cardBackgroundColor">@color/backgroundsPrimary</item>
+    </style>
+
+</resources>

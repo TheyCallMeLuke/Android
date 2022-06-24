@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="cz.ackee.testtask.rm.presentation.character_details.CharacterDetailsViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/character_details_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/details_card_margin"
+            app:cardCornerRadius="@dimen/details_card_corner_radius"
+            app:cardElevation="@dimen/details_card_elevation">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/details_padding">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/large_card"
+                            android:layout_width="@dimen/large_card_width"
+                            android:layout_height="@dimen/large_card_height"
+                            android:layout_marginEnd="@dimen/small_image_margin_start_end"
+                            app:cardCornerRadius="@dimen/small_image_corner_radius"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/character_details_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:imageUrl="@{viewModel.character.image}"
+                                tools:src="@drawable/__rick_sanchez" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/name"
+                            style="@style/CharacterNameText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/small_image_margin_start_end"
+                            android:text="@string/name"
+                            app:layout_constraintStart_toEndOf="@id/large_card"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Name" />
+
+                        <TextView
+                            style="@style/CharacterName.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/large_name_margin_top"
+                            android:text="@{viewModel.character.name}"
+                            app:layout_constraintStart_toEndOf="@id/large_card"
+                            app:layout_constraintStart_toStartOf="@id/name"
+                            app:layout_constraintTop_toBottomOf="@id/name"
+                            tools:text="Rick Sanchez" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        style="@style/HorizontalSeparator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/details_padding">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/CharacterInformationTypeText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/status"
+                                tools:text="Status" />
+
+                            <TextView
+                                style="@style/CharacterInformation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/information_bottom_margin"
+                                android:text="@{viewModel.character.status}"
+                                android:textAppearance="@style/CustomHeadline.3"
+                                tools:text="Alive" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/CharacterInformationTypeText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/species"
+                                tools:text="Species" />
+
+                            <TextView
+                                style="@style/CharacterInformation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/information_bottom_margin"
+                                android:text="@{viewModel.character.species}"
+                                tools:text="Human" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/CharacterInformationTypeText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/type"
+                                tools:text="Type" />
+
+                            <TextView
+                                style="@style/CharacterInformation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/information_bottom_margin"
+                                android:text="@{viewModel.character.type}"
+                                tools:text="-" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/CharacterInformationTypeText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/gender"
+                                tools:text="Gender" />
+
+                            <TextView
+                                style="@style/CharacterInformation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/information_bottom_margin"
+                                android:text="@{viewModel.character.name}"
+                                tools:text="Male" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/CharacterInformationTypeText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/origin"
+                                tools:text="Origin" />
+
+                            <TextView
+                                style="@style/CharacterInformation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/information_bottom_margin"
+                                android:text="@{viewModel.character.origin.name}"
+                                tools:text="Earth (C-137)" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/CharacterInformationTypeText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/location"
+                                tools:text="Location" />
+
+                            <TextView
+                                style="@style/CharacterInformation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/information_bottom_margin"
+                                android:text="@{viewModel.character.location.name}"
+                                tools:text="Earth (Replacement Dimension)" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </ScrollView>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="columns">1</integer>
+    <dimen name="information_bottom_margin">16dp</dimen>
+    <dimen name="details_padding">16dp</dimen>
+    <dimen name="toolbar_height">48dp</dimen>
+    <dimen name="toolbar_shadow_height">5dp</dimen>
+    <dimen name="small_save_icon_width">16dp</dimen>
+    <dimen name="small_save_icon_height">16dp</dimen>
+    <dimen name="fragment_margin_top">8dp</dimen>
+    <dimen name="bottom_nav_height">56dp</dimen>
+    <dimen name="small_favorite_icon_margin_start">4dp</dimen>
+    <dimen name="card_margin_bottom">8dp</dimen>
+    <dimen name="small_card_corner_radius">16dp</dimen>
+    <dimen name="small_card_elevation">3dp</dimen>
+    <dimen name="small_card_padding">8dp</dimen>
+    <dimen name="small_image_width">44dp</dimen>
+    <dimen name="small_image_height">44dp</dimen>
+    <dimen name="small_image_margin_start_end">16dp</dimen>
+    <dimen name="small_image_corner_radius">8dp</dimen>
+    <dimen name="small_card_information_padding">2dp</dimen>
+    <dimen name="large_card_width">140dp</dimen>
+    <dimen name="large_card_height">140dp</dimen>
+    <dimen name="details_card_margin">8dp</dimen>
+    <dimen name="details_card_corner_radius">10dp</dimen>
+    <dimen name="details_card_elevation">5dp</dimen>
+    <dimen name="large_name_margin_top">14dp</dimen>
+    <dimen name="recycler_view_padding">8dp</dimen>
+    <dimen name="constraint_layout_padding">8dp</dimen>
+</resources>

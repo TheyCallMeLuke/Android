@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accentPrimary">#9595FE</color>
+
+    <color name="backgroundsPrimary">#181819</color>
+    <color name="backgroundsSecondary">#2E2E2F</color>
+    <color name="backgroundsTertiary">#474747</color>
+    <color name="backgroundsBottomNavigation">#0F0F10</color>
+
+    <color name="foregroundsPrimary">#FFFFFF</color>
+    <color name="foregroundsSecondary">#8B8B8C</color>
+    <color name="foregroundsTertiary">#5D5D5E</color>
+    <color name="foregroundsSeparator">#474749</color>
+    <color name="foregroundsOnPrimary">#000000</color>
+
+    <color name="iconsPrimary">#FFFFFF</color>
+    <color name="iconsSecondary">#B3B3B3</color>
+    <color name="iconsTertiary">#9595FE</color>
+
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_characters"
+        android:icon="@drawable/ic__24_characters_active"
+        android:title="@string/characters" />
+
+    <item
+        android:id="@+id/navigation_favorites"
+        android:icon="@drawable/ic__24_favorites_active"
+        android:title="@string/favorites" />
+</menu>

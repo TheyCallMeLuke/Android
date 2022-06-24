@@ -1,0 +1,117 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AndroidTestTask" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/backgroundsPrimary</item>
+        <item name="colorOnSecondary">@color/accentPrimary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/backgroundsPrimary</item>
+        <item name="searchViewStyle">@style/CustomSearchViewStyle</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+
+    </style>
+
+    <style name="HorizontalSeparator">
+        <item name="android:background">@color/foregroundsSeparator</item>
+    </style>
+
+    <style name="CharacterName" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/foregroundsPrimary</item>
+    </style>
+
+    <style name="CharacterName.Small">
+        <item name="android:textAppearance">@style/CustomHeadline.3</item>
+    </style>
+
+    <style name="CharacterName.Medium">
+        <item name="android:textAppearance">@style/CustomHeadline.2</item>
+    </style>
+
+    <style name="CharacterNameText" parent="Widget.AppCompat.TextView">
+        <item name="android:textAppearance">@style/Paragraph.Medium</item>
+        <item name="android:textColor">@color/foregroundsSecondary</item>
+    </style>
+
+    <style name="CharacterInformationTypeText" parent="Widget.AppCompat.TextView">
+        <item name="android:textAppearance">@style/Paragraph.Small</item>
+        <item name="android:textColor">@color/foregroundsSecondary</item>
+    </style>
+
+    <style name="CharacterInformation" parent="Widget.AppCompat.TextView">
+        <item name="android:textAppearance">@style/CustomHeadline.3</item>
+        <item name="android:textColor">@color/foregroundsPrimary</item>
+    </style>
+
+    <style name="StatusText" parent="Widget.AppCompat.TextView" />
+
+    <style name="StatusText.Small" parent="Widget.AppCompat.TextView">
+        <item name="android:textAppearance">@style/Paragraph.Small</item>
+        <item name="android:textColor">@color/foregroundsSecondary</item>
+    </style>
+
+    <style name="FilteredCharacterCard">
+        <item name="cardBackgroundColor">@color/backgroundsPrimary</item>
+    </style>
+
+    <style name="CharacterCard">
+        <item name="cardBackgroundColor">@color/backgroundsTertiary</item>
+    </style>
+
+    <style name="NoFavoritesText" parent="Widget.AppCompat.TextView">
+        <item name="android:textAppearance">@style/Paragraph.Large</item>
+        <item name="android:textColor">@color/foregroundsTertiary</item>
+    </style>
+
+    <style name="BottomNavigation" parent="Widget.Design.BottomNavigationView">
+        <item name="colorPrimary">@color/accentPrimary</item>
+    </style>
+
+    <style name="CustomToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/CustomHeadline.2</item>
+        <item name="collapseIcon">@drawable/ic_24_arrow_left</item>
+        <item name="android:background">@color/backgroundsPrimary</item>
+    </style>
+
+    <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="queryHint">Search characters</item>
+        <item name="searchHintIcon">@null</item>
+        <item name="android:paddingStart">-16dp</item>
+        <item name="queryBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="Paragraph">
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="Paragraph.Small">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Paragraph.Medium">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Paragraph.Large">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="CustomHeadline">
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CustomHeadline.1">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="CustomHeadline.2">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="CustomHeadline.3">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

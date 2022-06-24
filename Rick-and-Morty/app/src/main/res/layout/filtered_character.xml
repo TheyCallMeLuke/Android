@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="character"
+            type="cz.ackee.testtask.rm.domain.Character" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/character_card_view"
+        style="@style/FilteredCharacterCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/card_margin_bottom"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/small_card_corner_radius"
+        app:cardElevation="@dimen/small_card_elevation"
+        app:cardPreventCornerOverlap="false"
+        app:contentPadding="@dimen/small_card_padding">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/small_image_width"
+                android:layout_height="@dimen/small_image_height"
+                android:layout_marginEnd="@dimen/small_image_margin_start_end"
+                app:cardCornerRadius="@dimen/small_image_corner_radius">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/character_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no"
+                    app:imageUrl="@{character.image}"
+                    tools:src="@drawable/__rick_sanchez" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/small_card_information_padding">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/small_save_icon_width"
+                    android:layout_height="@dimen/small_save_icon_height"
+                    android:layout_marginStart="@dimen/small_favorite_icon_margin_start"
+                    android:src="@drawable/ic_16_favorites_active"
+                    android:visibility="@{character.isSaved ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="@id/name"
+                    app:layout_constraintStart_toEndOf="@id/name"
+                    app:layout_constraintTop_toTopOf="@id/name" />
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/CharacterName.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{character.name}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Rick Sanchez" />
+
+                <TextView
+                    style="@style/StatusText.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{character.status}"
+                    app:layout_constraintStart_toStartOf="@id/name"
+                    app:layout_constraintTop_toBottomOf="@id/name"
+                    tools:text="Alive" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

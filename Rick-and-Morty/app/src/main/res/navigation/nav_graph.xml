@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_characters">
+
+
+    <fragment
+        android:id="@+id/navigation_characters"
+        android:name="cz.ackee.testtask.rm.presentation.characters.CharactersFragment"
+        android:label="@string/characters"
+        tools:layout="@layout/characters">
+        <action
+            android:id="@+id/action_action_characters_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="cz.ackee.testtask.rm.presentation.favorites.FavoritesFragment"
+        android:label="@string/favorites">
+        <action
+            android:id="@+id/action_action_favorites_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="cz.ackee.testtask.rm.presentation.character_details.CharacterDetailsFragment"
+        android:label="     "
+        tools:layout="@layout/character_details">
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+</navigation>

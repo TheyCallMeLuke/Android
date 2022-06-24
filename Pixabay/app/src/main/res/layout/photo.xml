@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="photo"
+            type="dang.lukas.domain.Photo" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/photo_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{photo.photo_url}"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom"
+            android:background="#70000000"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@{photo.tags}"
+            tools:text="Placeholder Text" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>

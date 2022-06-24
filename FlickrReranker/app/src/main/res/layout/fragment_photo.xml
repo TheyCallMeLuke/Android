@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="photo"
+            type="com.example.flickrreranker.domain.Photo" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/photo_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/photo_item"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginBottom="4dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{photo.imgSrcUrl}"
+            tools:src="@tools:sample/backgrounds/scenic" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>

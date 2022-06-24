@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/photoFragment">
+
+    <fragment
+        android:id="@+id/searchOptionsFragment"
+        android:name="com.example.flickrreranker.app.ui.search.SearchOptionsFragment"
+        android:label="Search Options" />
+    <fragment
+        android:id="@+id/photoFragment"
+        android:name="com.example.flickrreranker.app.ui.photo.PhotoFragment"
+        android:label="Photo List">
+        <action
+            android:id="@+id/action_photoFragment_to_searchOptionsFragment"
+            app:destination="@id/searchOptionsFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.example.flickrreranker.model.PhotoViewModel.FormErrors" />
+
+        <variable
+            name="viewModel"
+            type="com.example.flickrreranker.model.PhotoViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/icon_keywords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@id/keywords_container"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/keywords_container"
+                app:srcCompat="@drawable/ic_search" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/keywords_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:hint="@string/keywords_hint"
+                app:errorEnabled="true"
+                app:errorText='@{viewModel.formErrors.contains(FormErrors.MISSING_KEYWORDS) ? "Required" : ""}'
+                app:layout_constraintEnd_toEndOf="@id/date_container"
+                app:layout_constraintStart_toEndOf="@id/icon_keywords"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/keywords_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:id="@+id/divider_keywords_number"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/keywords_container" />
+
+            <ImageView
+                android:id="@+id/icon_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@id/number_container"
+                app:layout_constraintStart_toStartOf="@id/icon_keywords"
+                app:layout_constraintTop_toTopOf="@id/number_container"
+                app:srcCompat="@drawable/ic_hashtag" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/number_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:hint="@string/photo_count_hint"
+                app:errorEnabled="true"
+                app:errorText='@{viewModel.formErrors.contains(FormErrors.MISSING_PHOTO_COUNT) ? "Required" : ""}'
+                app:layout_constraintEnd_toEndOf="@id/keywords_container"
+                app:layout_constraintStart_toStartOf="@id/keywords_container"
+                app:layout_constraintTop_toBottomOf="@id/divider_keywords_number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/photo_count_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:inputType="number"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:id="@+id/divider_number_author"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/number_container" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/author_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:hint="@string/author_hint"
+                app:errorText='@{viewModel.formErrors.contains(FormErrors.MISSING_USERNAME) ? "Required" : ""}'
+                app:layout_constraintEnd_toEndOf="@id/number_container"
+                app:layout_constraintStart_toStartOf="@id/number_container"
+                app:layout_constraintTop_toBottomOf="@id/divider_number_author">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                app:layout_constraintBottom_toBottomOf="@id/author_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/author_container" />
+
+            <View
+                android:id="@+id/divider_author_date"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/author_container" />
+
+            <ImageView
+                android:id="@+id/icon_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@id/date_container"
+                app:layout_constraintStart_toStartOf="@id/icon_keywords"
+                app:layout_constraintTop_toTopOf="@id/date_container"
+                app:srcCompat="@drawable/ic_date" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/date_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/date_hint"
+                app:errorText='@{viewModel.formErrors.contains(FormErrors.MISSING_DATE) ? "Required" : ""}'
+                app:layout_constraintEnd_toStartOf="@id/switch_date"
+                app:layout_constraintStart_toStartOf="@id/keywords_container"
+                app:layout_constraintTop_toBottomOf="@id/divider_author_date">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/date_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                app:layout_constraintBottom_toBottomOf="@id/date_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/date_container" />
+
+            <View
+                android:id="@+id/divider_date_map"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_container" />
+
+            <ImageView
+                android:id="@+id/icon_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@id/latitude_container"
+                app:layout_constraintStart_toStartOf="@id/icon_keywords"
+                app:layout_constraintTop_toTopOf="@id/latitude_container"
+                app:srcCompat="@drawable/ic_map" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/latitude_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:layout_weight="1"
+                app:errorText='@{viewModel.formErrors.contains(FormErrors.MISSING_GEO) ? "Required" : ""}'
+                app:layout_constraintEnd_toEndOf="@id/date_container"
+                app:layout_constraintStart_toStartOf="@id/date_container"
+                app:layout_constraintTop_toBottomOf="@id/divider_date_map">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/latitude_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/latitude_hint"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_geo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                app:layout_constraintBottom_toBottomOf="@id/latitude_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/latitude_container" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/longitude_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:errorText='@{viewModel.formErrors.contains(FormErrors.MISSING_GEO) ? "Required" : ""}'
+
+                app:layout_constraintEnd_toEndOf="@id/latitude_container"
+                app:layout_constraintStart_toStartOf="@id/latitude_container"
+                app:layout_constraintTop_toBottomOf="@id/latitude_container">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/longitude_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/longitude_hint"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/map"
+                android:name="com.example.flickrreranker.app.ui.map.CustomMapFragment"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="@dimen/vertical_margin"
+                app:layout_constraintEnd_toEndOf="@id/longitude_container"
+                app:layout_constraintStart_toStartOf="@id/longitude_container"
+                app:layout_constraintTop_toBottomOf="@id/longitude_container" />
+
+            <View
+                android:id="@+id/divider_likes_views"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/map" />
+
+            <ImageView
+                android:id="@+id/icon_views"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@id/view_count_container"
+                app:layout_constraintStart_toStartOf="@id/icon_map"
+                app:layout_constraintTop_toTopOf="@id/view_count_container"
+                app:srcCompat="@drawable/ic_hashtag" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/view_count_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:hint="@string/view_hint"
+                app:errorText='@{viewModel.formErrors.contains(FormErrors.MISSING_VIEW_COUNT) ? "Required" : ""}'
+                app:layout_constraintEnd_toEndOf="@id/longitude_container"
+                app:layout_constraintStart_toStartOf="@id/longitude_container"
+                app:layout_constraintTop_toBottomOf="@id/divider_likes_views">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/view_count_edit_text"
+                    android:layout_width="match_parent"
+                    android:digits="0123456789"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_views"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                app:layout_constraintBottom_toBottomOf="@id/view_count_container"
+                app:layout_constraintStart_toStartOf="@id/switch_geo"
+                app:layout_constraintTop_toTopOf="@id/view_count_container" />
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:text="@string/submit"
+                app:layout_constraintStart_toStartOf="@id/view_count_container"
+                app:layout_constraintTop_toBottomOf="@id/view_count_container" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
